@@ -11,16 +11,20 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     // -> UITextFieldDelegate 를 통해 클레스가 텍스트 편집 및 유효성 검사를 관리할 수 있다.
     override func viewDidLoad() {
         super.viewDidLoad()
-        //텍스트 필드가 뷰 컨트롤러에 다시 보고 ( 감시자 같은 ? ) 
+        //텍스트 필드가 뷰 컨트롤러에 다시 보고 ( 감시자 같은 ? )
         serchTextFiled.delegate = self
         
     }
     // Magnifying Glass
     @IBAction func searchPressed(_ sender: UIButton) {
+        //리턴 완료 후 키보드 닫기
+        serchTextFiled.endEditing(true)
         print(serchTextFiled.text!)
     }
     // click to return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //리턴 완료 후 키보드 닫기
+        serchTextFiled.endEditing(true)
         print(serchTextFiled.text!)
         return true
     }
