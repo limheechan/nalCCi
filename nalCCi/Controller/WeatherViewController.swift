@@ -33,5 +33,14 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
         serchTextFiled.text = ""
     }
+    // textFiled 검색을 헀는지에 대한 유효성 검사
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if serchTextFiled.text != ""{
+            return true
+        }else{
+            serchTextFiled.placeholder = "도시를 검색 해보세요"
+            return false
+        }
+    }
 }
 
