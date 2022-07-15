@@ -21,6 +21,7 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         serchTextFiled.endEditing(true)
         print(serchTextFiled.text!)
     }
+    //--------------------------Delegate--------------------------
     // click to return
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         //리턴 완료 후 키보드 닫기
@@ -28,6 +29,9 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
         print(serchTextFiled.text!)
         return true
     }
-
+    // textFiled 종료가 되며 발동
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
+        serchTextFiled.text = ""
+    }
 }
 
