@@ -37,11 +37,13 @@ class WeatherViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         
         if textField.text != ""{
+            textField.placeholder = "Search"
             return true
-        }else{
+        }else{ // 입력을 하고 나도 이게 됨
             textField.placeholder = "도시를 검색 해보세요"
             return false
         }
+        
     }
 }
 
